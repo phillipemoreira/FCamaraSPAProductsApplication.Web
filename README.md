@@ -1,6 +1,8 @@
 # FCamaraSPAProductsApplication.WEB
 FCamara Full stack developer test: Web client
 
+This project demonstrates how to use AngularJS token based authentication in order to access a ASP.NET web api that requires authentication.
+
 ## It was developed using
   - Visual Studio 2015 Community Edition / ASPNET Web application
   - AngularJS
