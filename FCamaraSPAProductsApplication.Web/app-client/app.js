@@ -14,7 +14,7 @@ app.config(function ($routeProvider) {
 
     $routeProvider.when("/signup", {
         controller: "signupController",
-        templateUrl: "/app-client/Views/singup.html"
+        templateUrl: "/app-client/Views/signup.html"
     });
 
     $routeProvider.when("/products", {
