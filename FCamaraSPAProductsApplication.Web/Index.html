@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="productsApp">
+<head>
+    <title>FCamara test</title>
+    <link href="content/css/bootstrap.css" rel="stylesheet" />
+    <link href="content/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="indexController">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </button>
+                <a class="navbar-brand" href="#/">Home</a>
+            </div>
+            <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
+                <ul class="nav navbar-nav navbar-right">
+                    <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>
+                    <li data-ng-hide="!authentication.isAuth"><a href="#/products">My Products</a></li>
+                    <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Logout</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/login">Entrar</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Criar</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="page-header text-center">
+                <h1>FCamara SPA</h1>
+            </div>
+            <p>Esse site utiliza autenticacao por token para poder listar produtos contidos em um banco de dados SQLServerExpress.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
+    <hr />
+
+    <!-- 3rd party -->
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script src="scripts/angular-local-storage-min.js"></script>
+
+    <!-- app -->
+    <script src="app-client/app.js"></script>
+
+    <!-- Services -->
+    <script src="app-client/services/authorizationService.js"></script>
+    <script src="app-client/services/authorizationInterceptorService.js"></script>
+    <script src="app-client/services/productService.js"></script>
+
+    <!-- Controllers -->
+    <script src="app-client/controllers/indexController.js"></script>
+    <script src="app-client/controllers/homeController.js"></script>
+    <script src="app-client/controllers/loginController.js"></script>
+    <script src="app-client/controllers/signupController.js"></script>
+    <script src="app-client/controllers/listController.js"></script>
+</body>
+</html>
